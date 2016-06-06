@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel= "stylesheet" type= "text/css">
+    <link href="css/style.css" rel= "stylesheet" type= "text/css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.war.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="#">Cards</a>
+         </div>
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Blackjack</a></li>
+              <li class="active"><a href="war.html">War</a></li>
+            </ul>
+         </div>
+       </div><!--/.container-fluid -->
+     </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="row card-back">
+            <p>&#x1f0a0</p>
+          </div>
+          <div class="row l-c-count">
+          </div>
+          <!-- left player cardback -->
+        </div>
+        <div class="col-md-3 l-p-pot">
+          <!-- left player playzone -->
+        </div>
+        <div class="col-md-3 r-p-pot">
+
+          <!--  right player playzone -->
+        </div>
+        <div class="col-md-3">
+          <div class="row card-back">
+            <p>&#x1f0a0</p>
+          </div>
+          <div class="row l-c-count">
+          </div>
+          <!--  right player cardback -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button type="button" id="ldeal" class="btn btn-primary btn-disabled">Play</button>
+        </div>
+        <div class="col-md-4">
+          <button type="button" id="new" class="btn btn-success">New Game</button>
+        </div>
+        <div class="col-md-4">
+          <button type="button" id="rdeal" class="btn btn-primary btn-disabled">Play</button>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
