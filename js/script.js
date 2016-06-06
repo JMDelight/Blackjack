@@ -78,9 +78,12 @@ var shuffleDeck = function(arr1) {
 
 var renderHand = function(hand){
   var list = "";
-
   hand.forEach(function(element){
-    list += "<li class='cardface'>" + element + "</li>";
+    if(element.charAt(6) === "b" || element.charAt(6) === "c" )
+      list += "<li class='cardface redface'>" + element + "</li>";
+    else{
+      list += "<li class='cardface'>" + element + "</li>";
+    }
   });
 
   return list;
@@ -95,6 +98,10 @@ $(function(){
   $("#deal").click(function(){
     deal(playerHand, newDeck)
     $(".player-hand").empty().append(renderHand(playerHand));
+    if (calcHand(playerHand) > 21) {
+      $('#pbust').toggle();
+      $('.btn-disabled').prop('disabled', true);
+    }
 
   });
 
@@ -102,13 +109,23 @@ $(function(){
     $('#deal').prop('disabled', true);
     stand()
     $(".dealer-hand").empty().append(renderHand(dealerHand));
+    if(calcHand(dealerHand) > 21){
+      $('#dbust').show();
+    } else if(calcHand(dealerHand) >= calcHand(playerHand)){
+      $('#dwinner').show();
+    } else {
+      $('#pwinner').show();
+    }
 
   });
   $("#new").click(function(){
+    $(".msg").hide()
     $(".hand").empty();
     initGame();
     $('.btn-disabled').prop('disabled', false);
-    $(".dealer-hand").append(renderHand(dealerHand));
+    var dealerHandPreStand = dealerHand.slice(0);
+    dealerHandPreStand[0] = "&#x1f0a0";
+    $(".dealer-hand").append(renderHand(dealerHandPreStand));
     $(".player-hand").append(renderHand(playerHand));
 
   });

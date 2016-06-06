@@ -8,3 +8,25 @@
   text-decoration: none;
   list-style-type: none;
 }
+
+.msg-box {
+  font-size: 48px;
+}
+
+#dbust, #pbust, #dwinner{
+  color: red;
+  display: none;
+}
+
+#pwinner, #dwinner {
+  float: right;
+  display: none;
+}
+
+#pwinner {
+  color: green;
+  display: none;
+}
+.redface {
+  color: red;
+}
