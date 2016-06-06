@@ -1,4 +1,10 @@
-.test {
+.cardface {
   font-size: 150px;
+  display: inline;
+}
 
+.hand {
+  display: inline;
+  text-decoration: none;
+  list-style-type: none;
 }
